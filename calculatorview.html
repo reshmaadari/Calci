@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>calculator</title>
+    <script src="../angular.min.js"></script>
+    <script src="calculatorctrl.js"></script>
+</head>
+<style>
+    button{
+        height: 50px;
+        width: 50px;
+        border-radius: 8px;
+    }
+    input{
+        width: 230px;
+        height: 30px;
+    }
+    table,td{
+        width: 250px;
+        height: 60px;
+        text-align: center;
+    }
+    #one,#two{
+        margin-bottom: 10px;
+        margin-right: 5px;
+        text-align: right;
+        height: 10px;
+        margin-top: 30px;
+    }
+    
+    fieldset{
+        width: 250px;
+        margin-left: 550px;
+        margin-top: 100px;
+        text-align: center;
+        position: fixed;
+    }
+</style>
+<body ng-app="myApp" ng-controller="calculatorctrl">
+    <!-- <center><h2>calculator</h2></center> -->
+    <fieldset>
+    <div style="font-weight: lighter;" id="one">{{previousval}}</div>
+    <div style="font-weight: bolder;" id="two"><b>{{currentval}}</b></div>
+    <!-- <div >{{hello}}</div> -->
+    <div>
+    <table>
+        <tr>
+           
+            <td ng-click="clearfun()"><button>AC</button></td>
+            <td ng-click="deletefun()"><button>del</button></td>
+            <td ng-click="operatorfun('%')"><button>%</button></td>
+            <td ng-click="operatorfun('/')"><button>/</button></td>
+        </tr>
+        <tr>
+            <td ng-click="operandfun(7)"><button>7</button></td>
+            <td ng-click="operandfun(8)"><button>8</button></td>
+            <td ng-click="operandfun(9)"><button>9</button></td>
+            <td ng-click="operatorfun('*')"><button>*</button></td>
+        </tr>
+        <tr>
+            <td ng-click="operandfun(4)"><button>4</button></td>
+            <td ng-click="operandfun(5)"><button>5</button></td>
+            <td ng-click="operandfun(6)"><button>6</button></td>
+            <td ng-click="operatorfun('+')"><button>+</button></td>
+        </tr>
+        <tr>
+            <td ng-click="operandfun(1)"><button>1</button></td>
+            <td ng-click="operandfun(2)"><button>2</button></td>
+            <td ng-click="operandfun(3)"><button>3</button></td>
+            <td ng-click="operatorfun('-')"><button>-</button></td>
+        </tr>
+        <tr>
+            
+            <td colspan="2" ng-click="operandfun(0)"><button style="width: 115px;">0</button></td>
+            <td ng-click="operandfun('.')"><button>.</button></td>
+            <td ng-click="result()"><button>=</button></td>
+        </tr>
+    </table>
+    </div>
+    </fieldset>
+</body>
+</html>
